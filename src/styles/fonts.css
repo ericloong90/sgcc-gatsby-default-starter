@@ -1,0 +1,158 @@
+/* #region Aileron */
+@font-face {
+  font-family: 'Aileron Regular';
+  src: url('../assets/fonts/aileron/Aileron-Regular-webfont.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron Bold';
+  src: url('../assets/fonts/aileron/Aileron-Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron Italic';
+  src: url('../assets/fonts/aileron/Aileron-Italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron Bold Italic';
+  src: url('../assets/fonts/aileron/Aileron-BoldItalic-webfont.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron Semibold';
+  src: url('../assets/fonts/aileron/Aileron-SemiBold-webfont.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron Semibold Italic';
+  src: url('../assets/fonts/aileron/Aileron-SemiBoldItalic-webfont.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron Heavy';
+  src: url('../assets/fonts/aileron/Aileron-Heavy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aileron Heavy Italic';
+  src: url('../assets/fonts/aileron/Aileron-HeavyItalic-webfont.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* #endregion End of Aileron */
+
+/* #region Cooper Hewitt */
+@font-face {
+  font-family: 'Cooper Hewitt Light';
+  src: url('../assets/fonts/cooper-hewitt/CooperHewitt-Light.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Bold';
+  src: url('../assets/fonts/cooper-hewitt/CooperHewitt-Bold.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Bold Italic';
+  src: url('../assets/fonts/cooper-hewitt/CooperHewitt-BoldItalic.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Medium';
+  src: url('../assets/fonts/cooper-hewitt/CooperHewitt-Medium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Medium Italic';
+  src: url('../assets/fonts/cooper-hewitt/CooperHewitt-MediumItalic.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Semibold';
+  src: url('../assets/fonts/cooper-hewitt/CooperHewitt-Semibold.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Semibold Italic';
+  src: url('../assets/fonts/cooper-hewitt/CooperHewitt-SemiboldItalic.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Heavy';
+  src: url('../assets/fonts/cooper-hewitt/CooperHewitt-Heavy.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* #endregion End of Cooper Hewitt */
+
+/* #region PT Sans */
+@font-face {
+  font-family: 'PT Sans Regular';
+  src: url('../assets/fonts/pt-sans/PTS55F-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans Bold';
+  src: url('../assets/fonts/pt-sans/PTS75F-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans Italic';
+  src: url('../assets/fonts/pt-sans/PTS56F-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT Sans Bold Italic';
+  src: url('../assets/fonts/pt-sans/PTS76F-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* #endregion End of PT Sans */

@@ -1,0 +1,40 @@
+# image: node:10.15.3
+
+# pipelines:
+#   branches:
+#     master:
+#       - step:
+#           name: Master development branch testing
+#           caches:
+#             - node
+#           script:
+#             - yarn
+#             - yarn test:ci
+#     release:
+#       - step:
+#           name: Master pipe testing and building website
+#           caches:
+#             - node
+#           script:
+#             - yarn
+#             - yarn test:ci
+#             - yarn build
+#           artifacts:
+#             - public/**
+#       - step:
+#           name: Deploying built website to S3
+#           caches:
+#             - node
+#           script:
+#             - pipe: atlassian/aws-s3-deploy:0.2.2
+#               variables:
+#                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+#                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+#                 AWS_DEFAULT_REGION: 'ap-southeast-1'
+#                 S3_BUCKET: 'sgcctest2'
+#                 LOCAL_PATH: 'public'
+#                 ACL: 'public-read'
+#                 CACHE_CONTROL: 'max-age=3600'
+#                 EXPIRES: '2019-12-01T00:00:00+00:00'
+#                 DELETE_FLAG: 'true'
+#                 EXTRA_ARGS: '--follow-symlinks'

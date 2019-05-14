@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "plugins": ["react-redux"],
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "plugin:react-redux/recommended"],
+  "rules": {
+    "react/no-danger": 0,
+    "react/no-array-index-key": 0,
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ]
+  }
+}
