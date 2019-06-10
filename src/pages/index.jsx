@@ -27,7 +27,7 @@ const IndexPage = ({ location }) => (
         'python for kids',
         'coding for kids python',
         'ib computer science tuition Singapore',
-        'beginner java courses Singapore'
+        'beginner java courses Singapore',
       ]}
       location={location}
     />
@@ -38,13 +38,13 @@ const IndexPage = ({ location }) => (
 );
 
 IndexPage.defaultProps = {
-  location: {}
+  location: {},
 };
 
 IndexPage.propTypes = {
   location: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string])
-  )
+    PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
+  ),
 };
 
 export default IndexPage;
