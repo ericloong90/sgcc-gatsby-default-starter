@@ -1,4 +1,6 @@
-const initialState = {};
+const initialState = {
+  value: 'Hello World',
+};
 
 export default (state = initialState, { payload, type }) => {
   switch (type) {

@@ -6,10 +6,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         rules: [
           {
             test: /sampleNPMLibraryThatUsesWindowOrDocument/,
-            use: loaders.null()
-          }
-        ]
-      }
+            use: loaders.null(),
+          },
+        ],
+      },
     });
   }
 };

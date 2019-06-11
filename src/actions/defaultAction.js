@@ -1,6 +1,4 @@
-export default payload => {
-  return {
-    type: 'DEFAULT',
-    payload
-  };
-};
+export default payload => ({
+  type: 'DEFAULT',
+  payload,
+});

@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, keywords, title, location }) {
+function SEO({
+  description, lang, meta, keywords, title, location,
+}) {
   const {
-    site: { siteMetadata }
+    site: { siteMetadata },
   } = useStaticQuery(graphql`
     query {
       site {
@@ -27,60 +29,59 @@ function SEO({ description, lang, meta, keywords, title, location }) {
     <>
       <Helmet
         htmlAttributes={{
-          lang
+          lang,
         }}
         title={title}
         titleTemplate={`%s | ${siteMetadata.title}`}
         meta={[
           {
             name: 'description',
-            content: metaDescription
+            content: metaDescription,
           },
           {
             property: 'og:title',
-            content: title
+            content: title,
           },
           {
             property: 'og:description',
-            content: metaDescription
+            content: metaDescription,
           },
           {
             property: 'og:type',
-            content: 'website'
+            content: 'website',
           },
           {
             property: 'og:url',
-            content: location.origin + location.pathname
+            content: location.origin + location.pathname,
           },
           {
             name: 'twitter:card',
-            content: 'summary'
+            content: 'summary',
           },
           {
             name: 'twitter:creator',
-            content: siteMetadata.author
+            content: siteMetadata.author,
           },
           {
             name: 'twitter:title',
-            content: title
+            content: title,
           },
           {
             name: 'twitter:description',
-            content: metaDescription
+            content: metaDescription,
           },
           {
             name: 'viewport',
-            content:
-              'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
-          }
+            content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+          },
         ]
           .concat(
             keywords.length > 0
               ? {
-                  name: 'keywords',
-                  content: keywords.join(', ')
-                }
-              : []
+                name: 'keywords',
+                content: keywords.join(', '),
+              }
+              : [],
           )
           .concat(meta)}
       />
@@ -102,7 +103,7 @@ SEO.defaultProps = {
   meta: [],
   keywords: [],
   description: '',
-  location: {}
+  location: {},
 };
 
 SEO.propTypes = {
@@ -112,8 +113,8 @@ SEO.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
   location: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.object])
-  )
+    PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.object]),
+  ),
 };
 
 export default SEO;
