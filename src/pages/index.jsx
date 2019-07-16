@@ -49,8 +49,8 @@ const IndexPage = ({ location }) => {
       >
         Trigger Action
       </button>
-      <Link to="/level2">Go to Level 2</Link>
-      <Link to="/level3">Go to Level 3</Link>
+      <Link to="/level2/">Go to Level 2</Link>
+      <Link to="/level3/">Go to Level 3</Link>
     </>
   );
 };
