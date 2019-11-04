@@ -3,10 +3,16 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reduxPromise from 'redux-promise';
 import PropTypes from 'prop-types';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
+
 import rootReducer from '../reducers';
 
 const Root = ({ element, initialState }) => {
-  const store = createStore(rootReducer, initialState || {}, applyMiddleware(reduxPromise));
+  const store = createStore(
+    rootReducer,
+    initialState || {},
+    composeWithDevTools(applyMiddleware(reduxPromise)),
+  );
 
   return <Provider store={store}>{element}</Provider>;
 };
