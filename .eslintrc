@@ -5,7 +5,7 @@
   },
   "plugins": ["react-redux"],
   "parser": "babel-eslint",
-  "extends": ["airbnb", "plugin:react-redux/recommended"],
+  "extends": ["airbnb", "prettier", "plugin:react-redux/recommended"],
   "rules": {
     "react/no-danger": 0,
     "react/no-array-index-key": 0,
@@ -15,6 +15,16 @@
         "required": {
           "some": ["nesting", "id"]
         }
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "functions": "never",
+        "arrays": "always-multiline",
+        "exports": "always-multiline",
+        "imports": "always-multiline",
+        "objects": "always-multiline"
       }
     ]
   }

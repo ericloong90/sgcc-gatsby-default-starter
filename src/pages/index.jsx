@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { useSelector, useDispatch } from 'react-redux';
 
 import SEO from '../components/seo';
@@ -49,8 +48,6 @@ const IndexPage = ({ location }) => {
       >
         Trigger Action
       </button>
-      <Link to="/level2/">Go to Level 2</Link>
-      <Link to="/level3/">Go to Level 3</Link>
     </>
   );
 };
@@ -61,7 +58,7 @@ IndexPage.defaultProps = {
 
 IndexPage.propTypes = {
   location: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string]),
+    PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.string])
   ),
 };
 

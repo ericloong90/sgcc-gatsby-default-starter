@@ -3,13 +3,15 @@ import shortid from 'shortid';
 import { Link } from 'gatsby';
 
 import $ from '../styles/global';
+import useActions from './useActions';
 
 /**
  * Retrieves 1 absolute path to the Webpack processed image from the assets/image folder.
  * @param {string} pathToImage
  * @return {string}
  */
-const importOneImage = pathToImage => require.context('../assets/images', true)(`./${pathToImage}`);
+const importOneImage = pathToImage =>
+  require.context('../assets/images', true)(`./${pathToImage}`);
 
 /**
  * Retrieves 1 SVG image as React Component from assets/image.
@@ -49,24 +51,24 @@ const isDesktop = () => window.matchMedia($.device.desktop).matches;
  *  components
  */
 const useOutsideClick = (refArray, callback) => {
-  const handleOutsideClick = (event) => {
+  const handleOutsideClick = event => {
     let outsideClick = false;
 
     if (!(Array.isArray(refArray) && refArray.length > 0)) {
       console.log('Please pass in an array of refs.');
     }
 
-    refArray.forEach((ref) => {
+    refArray.forEach(ref => {
       if (ref.current && !ref.current.contains(event.target)) {
         if (refArray.length > 1) {
           refArray
-            .filter((refPrime) => {
+            .filter(refPrime => {
               if (ref === refPrime) {
                 return false;
               }
               return true;
             })
-            .forEach((refPrime) => {
+            .forEach(refPrime => {
               if (!refPrime.current.contains(event.target)) {
                 outsideClick = true;
               }
@@ -100,7 +102,8 @@ const useOutsideClick = (refArray, callback) => {
  * @param {array} items - 1 array of objects.
  * @returns {array}
  */
-const addKeys = items => items.map(item => ({ ...item, key: shortid.generate() }));
+const addKeys = items =>
+  items.map(item => ({ ...item, key: shortid.generate() }));
 
 /**
  * Takes in a string, and convert internal link strings to actual Gatsby link components
@@ -113,19 +116,20 @@ const addKeys = items => items.map(item => ({ ...item, key: shortid.generate() }
  * Link component instead. If not passed in, it will use the default styled Link component here
  * @returns {array} - returns an array of spliced in original string and Gatsby Link components
  */
-const parseStringToGatsbyLink = (subject, LinkComponent = Link) => subject.split(/<Link>|<\/Link>/).map((ele) => {
-  if (/\/.+?\|.+/.test(ele)) {
-    const key = shortid.generate();
-    return (
-      <LinkComponent key={key} to={ele.split('|')[0]}>
-        {ele.split('|')[1]}
-      </LinkComponent>
-    );
-  }
-  return ele;
-});
+const parseStringToGatsbyLink = (subject, LinkComponent = Link) =>
+  subject.split(/<Link>|<\/Link>/).map(ele => {
+    if (/\/.+?\|.+/.test(ele)) {
+      const key = shortid.generate();
+      return (
+        <LinkComponent key={key} to={ele.split('|')[0]}>
+          {ele.split('|')[1]}
+        </LinkComponent>
+      );
+    }
+    return ele;
+  });
 
-const parseTimeToDayMonth = (item) => {
+const parseTimeToDayMonth = item => {
   const date = new Date(item);
   const day = date.getDate();
   const month = date.toLocaleString('en-us', { month: 'short' });
@@ -133,7 +137,7 @@ const parseTimeToDayMonth = (item) => {
   return `${day} ${month}`;
 };
 
-const parseTimeToDayName = (item) => {
+const parseTimeToDayName = item => {
   const date = new Date(item);
 
   return date.toLocaleString('en-us', { weekday: 'short' });
@@ -150,4 +154,5 @@ export default {
   parseStringToGatsbyLink,
   parseTimeToDayMonth,
   parseTimeToDayName,
+  useActions,
 };
