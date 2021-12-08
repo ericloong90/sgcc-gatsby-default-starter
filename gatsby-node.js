@@ -2,19 +2,33 @@ const path = require('path');
 const pagesData = require('./src/pages.json');
 
 // This is used to prevent these libraries from running when executing Gatsby build
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins }) => {
+  const obj = {};
+
   if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /sampleNPMLibraryThatUsesWindowOrDocument/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    });
+    obj.module = {
+      rules: [
+        {
+          test: /sampleNPMLibraryThatUsesWindowOrDocument/,
+          use: loaders.null(),
+        },
+      ],
+    };
   }
+
+  if (stage === 'build-javascript' || stage === 'develop') {
+    obj.plugins = [plugins.provide({ process: 'process/browser' })];
+  }
+
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        path: require.resolve('path-browserify'),
+        fs: false,
+      },
+    },
+    ...obj,
+  });
 };
 
 exports.createPages = ({ graphql, actions }) => {
@@ -59,7 +73,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           name,
         },
-      }),
+      })
     );
   });
 

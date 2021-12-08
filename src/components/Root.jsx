@@ -11,7 +11,7 @@ const Root = ({ element, initialState }) => {
   const store = createStore(
     rootReducer,
     initialState || {},
-    composeWithDevTools(applyMiddleware(reduxPromise)),
+    composeWithDevTools(applyMiddleware(reduxPromise))
   );
 
   return <Provider store={store}>{element}</Provider>;

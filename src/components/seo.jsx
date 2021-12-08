@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({
-  description, lang, meta, keywords, title, location,
-}) {
+function SEO({ description, lang, meta, keywords, title, location }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -72,16 +70,17 @@ function SEO({
           },
           {
             name: 'viewport',
-            content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+            content:
+              'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
           },
         ]
           .concat(
             keywords.length > 0
               ? {
-                name: 'keywords',
-                content: keywords.join(', '),
-              }
-              : [],
+                  name: 'keywords',
+                  content: keywords.join(', '),
+                }
+              : []
           )
           .concat(meta)}
       />
@@ -113,7 +112,7 @@ SEO.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
   location: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.object]),
+    PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.object])
   ),
 };
 

@@ -4,9 +4,12 @@
     "jest": true
   },
   "plugins": ["react-redux"],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": ["airbnb", "prettier", "plugin:react-redux/recommended"],
   "rules": {
+    "react/function-component-definition": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react-redux/useSelector-prefer-selectors": "off",
     "react/no-danger": 0,
     "react/no-array-index-key": 0,
     "jsx-a11y/label-has-for": [

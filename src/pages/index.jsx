@@ -9,7 +9,7 @@ const IndexPage = ({ location }) => {
   const obj = useSelector(({ defaultReducer }) => defaultReducer);
   const dispatch = useDispatch();
 
-  const defaultDispatch = payload => dispatch(defaultAction(payload));
+  const defaultDispatch = (payload) => dispatch(defaultAction(payload));
 
   return (
     <>

@@ -5,6 +5,7 @@
  * The following code allows us to load different env files depending on the environment,
  * be it development or production.
  */
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
